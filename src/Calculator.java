@@ -22,8 +22,14 @@ public class Calculator {
         double Answer=number1*number2;
         System.out.println("Multiplication of "+number1+ " and "+number2+" is : "+Answer);
     }void division(double number1, double number2){
-        double Answer=number1/number2;
-        System.out.println("Division of "+number1+ " and "+number2+" is : "+Answer);
+        try{
+            double Answer=number1/number2;
+            System.out.println("Division of "+number1+ " and "+number2+" is : "+Answer);
+
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
 
