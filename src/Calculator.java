@@ -12,11 +12,16 @@ public class Calculator {
     }
     void multiplication(double number1, double number2){
         double Answer=number1*number2;
-        System.out.println("multiplication of "+number1+ " and "+number2+" is : "+Answer);
+        System.out.println("Multiplication of "+number1+ " and "+number2+" is : "+Answer);
+    }
+    void division(double number1, double number2){
+        double Answer=number1/number2;
+        System.out.println("Divison of "+number1+ " and "+number2+" is : "+Answer);
     }
     public static void main(String[] args) {
         Scanner scanner =new Scanner(System.in);
         Calculator calculator =new Calculator();
+        System.out.println("Calculator\n");
         System.out.println("Enter the first number ");
         double number1= scanner.nextDouble();
         System.out.println("Enter the calc operation + - * / ");
@@ -27,14 +32,18 @@ public class Calculator {
 
             case "+":
                 calculator.addition( number1,number2);
+                break;
             case "-":
                 calculator.subraction( number1,number2);
                 break;
             case "*":
                 calculator.multiplication( number1,number2);
+                break;
+            case "/":
+                calculator.division( number1,number2);
+                break;
             default:
-
-
+                break;
 
         }
 
