@@ -1,51 +1,57 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Calculator {
-     void addition(double number1, double number2){
+    Scanner scanner=new Scanner(System.in);
+    void menuDriven(){
+        System.out.println("\nCalculator\n");
+        System.out.println(" Enter the math opertoration : 1 for Addition 2 for Subraction, 3 for Multiplication, 4 for Division, 5 for Exit ");
+        System.out.println("Enter the choice ");
+        int cal=scanner.nextInt();
+        mathOperation(cal);
+
+    }
+    void addition(double number1, double number2){
         double Answer=number1+number2;
-         System.out.println("Addition of "+number1+ " and "+number2+" is : "+Answer);
+        System.out.println("Addition of "+number1+ " and "+number2+" is : "+Answer);
     }
-    void subraction(double number1, double number2){
-        double Answer=number1-number2;
-        System.out.println("Subraction of "+number1+ " and "+number2+" is : "+Answer);
-    }
-    void multiplication(double number1, double number2){
-        double Answer=number1*number2;
-        System.out.println("Multiplication of "+number1+ " and "+number2+" is : "+Answer);
-    }
-    void division(double number1, double number2){
-        double Answer=number1/number2;
-        System.out.println("Divison of "+number1+ " and "+number2+" is : "+Answer);
+
+    void mathOperation(int cal){
+        switch (cal){
+
+            case 1:
+                System.out.println("Addition");
+                System.out.println("Enter the first number ");
+                double number1= scanner.nextDouble();
+                System.out.println("Enter the Second number ");
+                double number2= scanner.nextDouble();
+                addition( number1,number2);
+                break;
+
+
+            default:
+                System.out.println("Enter the correct math operation like + - * / ");
+                break;
+
+        }
+
+
+
     }
     public static void main(String[] args) {
         Scanner scanner =new Scanner(System.in);
         Calculator calculator =new Calculator();
-        System.out.println("Calculator\n");
-        System.out.println("Enter the first number ");
-        double number1= scanner.nextDouble();
-        System.out.println("Enter the calc operation + - * / ");
-        String calc= scanner.next();
-        System.out.println("Enter the Second number ");
-        double number2= scanner.nextDouble();
-        switch (calc){
+        calculator.menuDriven();
+        while (1>0){
+            calculator.menuDriven();
 
-            case "+":
-                calculator.addition( number1,number2);
-                break;
-            case "-":
-                calculator.subraction( number1,number2);
-                break;
-            case "*":
-                calculator.multiplication( number1,number2);
-                break;
-            case "/":
-                calculator.division( number1,number2);
-                break;
-            default:
-                break;
+
+
 
         }
+
+
+
+
 
     }
 }
